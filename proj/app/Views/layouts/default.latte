@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>{block title}{/block} </title>
+    <link rel="stylesheet" href="/styles.css">
+
+    {block styles}{/block}
+</head>
+
+<body>
+
+    {include '../templates/header.latte'}
+    
+    <main>
+        <h1>
+            {block content-title}{/block}
+        </h1>
+      {block content}{/block}
+    </main>
+
+    {include '../templates/footer.latte'}
+    
+    {block js}{/block}
+</body>
+
+</html>
