@@ -1,0 +1,52 @@
+{layout '../layouts/default.latte'}
+
+{block title}
+    {$title}
+{/block}
+
+{block styles}
+<style>
+    article,
+    main {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    article {
+        gap: 0.5rem;
+    }
+</style>
+{/block}
+
+{block content-title}
+    {$title}
+{/block}
+
+{block content}
+
+    {if !empty($news) && is_array($news)}
+
+    <article n:foreach="$news as $item">
+        <h3>
+            {$item['title']}
+        </h3>
+
+        <p class="main">
+        {$item['body']}
+        </p>
+
+        <a href="/news/{$item['slug']}">
+            View article
+        </a>
+    </article>
+
+    {else}
+    <h3>No News</h3>
+
+    <p>Unable to find any news for you.</p>
+
+    {/if}
+
+{/block}
+
