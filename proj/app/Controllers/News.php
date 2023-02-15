@@ -16,7 +16,8 @@ class News extends BaseController
             'title' => 'News archive',
         ];
 
-        return view('news/index', $data);
+        return $this->renderLatte(view: 'news/index', params: $data);
+        // return view('news/index', $data);
     }
 
     public function show($slug = null)
