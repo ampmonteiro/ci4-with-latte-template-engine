@@ -9,6 +9,8 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 
+use Latte\Engine;
+
 /**
  * Class BaseController
  *
@@ -37,6 +39,10 @@ abstract class BaseController extends Controller
      */
     protected $helpers = [];
 
+    protected Engine $templateLatte;
+
+    protected $viewFolderPath = APPPATH . 'Views/';
+
     /**
      * Be sure to declare properties for any property fetch you initialized.
      * The creation of dynamic property is deprecated in PHP 8.2.
@@ -54,5 +60,20 @@ abstract class BaseController extends Controller
         // Preload any models, libraries, etc, here.
 
         // E.g.: $this->session = \Config\Services::session();
+        $this->initLatte();
+    }
+
+    protected function renderLatte(string $view, array $params = []): string
+    {
+        $toRender = $this->viewFolderPath . $view . '.latte';
+
+        return $this->templateLatte->renderToString($toRender, $params);
+    }
+
+    private function initLatte()
+    {
+        $this->templateLatte = new Engine;
+        // cache directory
+        $this->templateLatte->setTempDirectory(WRITEPATH . 'temp');
     }
 }
