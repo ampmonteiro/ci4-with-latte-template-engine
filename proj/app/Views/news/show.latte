@@ -1,0 +1,26 @@
+{layout '../layouts/default.latte'}
+
+{block title}
+    {$title}
+{/block}
+
+{block content-title}
+    {$title}
+{/block}
+{block content}
+<p>{$news['body']}</p>
+
+<section style="margin-top:2rem;display: flex; gap: 10rem;">
+    <a href="/news/{$news['slug']}/edit">
+        Edit article
+    </a>
+    {form_open(
+        'news/delete',
+        hidden: ['news_id' => esc($news['id'])]
+    )|noescape}
+    
+    <button>Delete</button>
+    {form_close()|noescape}
+</section>
+
+{/block}
