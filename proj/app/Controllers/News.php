@@ -91,7 +91,8 @@ class News extends BaseController
 
         helper('form');
 
-        return view('news/edit', $data);
+        // return view('news/edit', $data);
+        return $this->renderLatte(view: 'news/edit', params: $data);
     }
 
     public function update()
