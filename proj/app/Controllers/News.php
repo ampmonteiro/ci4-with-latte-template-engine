@@ -40,7 +40,7 @@ class News extends BaseController
     public function create()
     {
         helper('form');
-        return view('news/create', ['title' => 'Create a news item']);
+        return $this->renderLatte(view: 'news/create', params: ['title' => 'Create a news item']);
     }
 
     public function store()
