@@ -1,21 +1,14 @@
-# CodeIgniter 4 - Build Your First Application
+# CodeIgniter 4 with Latte template engine
 
 ## About the project?
 
-Base on Docs of CI4:
+Base on my improved version of `ci4 - Build Your First Application`:
 
-[Build Your First Application](https://codeigniter.com/user_guide/tutorial/).
-
-With new feature added for better understanding the framework
+[Original improved](https://github.com/ampmonteiro/ci4-build-your-first-App).
 
 What was added:
 
-- taking advantages of layout system
-- Edit news item
-- remove news item
-- used of form_open helper
-- better routes organization
-- better visual
+- Latte template engine in news related views
 
 ## What was used
 
@@ -23,10 +16,15 @@ What was added:
 - mysql: 8
 - Docker
 - CodeIgniter: 4.3.1
+- Latte template engine: 3.0.5 -> [more about it](https://latte.nette.org/en/)
+
+## side by side template code (Latte vs Vanilla Ci4 template engine)
+
+![Ci4 Template engine vs Latte template engine](latte_vs_ci4_template.png 'Ci4 Template engine vs Latte template engine')
 
 ## image of the App
 
-![CI4 News-Improved](app_screen.png 'News APp')
+![CI4 News-Improved](app_screen.png 'News APP with Latte')
 
 ## Editor and Recommend extensions
 
@@ -37,6 +35,8 @@ What was added:
 - [PHP Namespace Resolver](https://marketplace.visualstudio.com/items?itemName=MehediDracula.php-namespace-resolver) (By Mehedi Hassan)
 
 - [PHP Awesome Snippets](https://marketplace.visualstudio.com/items?itemName=hakcorp.php-awesome-snippets) (By HakCorp)
+
+- [Nette Latte + Neon](https://marketplace.visualstudio.com/items?itemName=Kasik96.latte) (Martin Kase)
 
 - To better developement it is taked advantages of this two wonderfull vscode extensions:
   - [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) (By Microsoft): to manage docker containers in vs code
