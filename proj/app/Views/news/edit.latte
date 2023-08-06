@@ -1,18 +1,8 @@
 {layout '../layouts/default.latte'}
 
-{block title}
-    {$title}
-{/block}
-
-{block content-title}
-    {$title}
-{/block}
-
 {block content}
-    {session()->getFlashdata('error')|noescape}
-    {validation_list_errors()|noescape}
 
-    {form_open(
+{form_open(
         'news/update',
         hidden: ['news_id' => esc($news['id'])]
     )|noescape}
@@ -20,16 +10,26 @@
     <p class="form-control">
         <label for="title">Title</label>
         <input id="title" name="title" value={old('title') ?? $news['title']}>
+
+        <small n:if="validation_show_error('title')" 
+                style="color: brown; margin-block: 0.5rem;">
+            {validation_show_error('title')|noescape}
+        </small>
     </p>
 
     <p class="form-control">
         <label for="body">Text</label>
         <textarea id="body" name="body" cols="45" rows="4">{old('body') ?? $news['body']}</textarea>
+
+        <small n:if="validation_show_error('body')"
+                style="color: brown; margin-block: 0.5rem;">
+            {validation_show_error('body')|noescape}
+        </small>
     </p>
 
     <button>
         Update
     </button>
-    {form_close()|noescape}
+{form_close()|noescape}
 
 {/block}

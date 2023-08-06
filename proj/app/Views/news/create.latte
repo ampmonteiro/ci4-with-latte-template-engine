@@ -1,15 +1,6 @@
 {layout '../layouts/default.latte'}
 
-{block title}
-    {$title}
-{/block}
-
-{block content-title}
-    {$title}
-{/block}
-
 {block content}
-    {session()->getFlashdata('error')|noescape}
     {validation_list_errors()|noescape }
 
     {form_open('news/store')|noescape}
