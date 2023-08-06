@@ -20,7 +20,7 @@ What was added:
 
 ## side by side template code (Latte vs Vanilla Ci4 template engine)
 
-![Ci4 Template engine vs Latte template engine](latte_vs_ci4_template.png 'Ci4 Template engine vs Latte template engine')
+![Ci4 Template engine vs Latte template engine](latte_vs_ci4_template_v2.png 'Ci4 Template engine vs Latte template engine')
 
 ## image of the App
 
